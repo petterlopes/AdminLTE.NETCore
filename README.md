@@ -1,5 +1,6 @@
 # AdminLTE.NETCore
-Implementation of AdminLTE Layout with ASP.NET Core 2.0 MVC in VS2017
+Implementation of AdminLTE Layout with ASP.NET Core 2.1 MVC in VS2017
+All code cleaned with Code Maid
 
 For the source of the layout look at here, there is great support there:
 https://github.com/almasaeed2010/AdminLTE
@@ -27,7 +28,7 @@ Todo List:
 - Fine tune the implementation.
 
 How to use:
-Download and install .NET Core 2.0
+Download and install .NET Core 2.1
 - https://www.microsoft.com/net/download/windows
 
 Download this package and place in a folder of your choice.
