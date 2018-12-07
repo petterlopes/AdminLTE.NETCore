@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/AdminLTE.NETCore",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:20652/",
       "sslPort": 0
@@ -22,6 +26,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "IIS": {
+      "commandName": "IIS",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost/AdminLTE.NETCore"
     }
   }
 }

@@ -1,0 +1,11 @@
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.deps.json
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.runtimeconfig.json
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.runtimeconfig.dev.json
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.dll
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.pdb
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.csprojAssemblyReference.cache
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.csproj.CoreCompileInputs.cache
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.AssemblyInfoInputs.cache
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.AssemblyInfo.cs
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.dll
+D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\obj\Debug\netcoreapp2.1\AdminLTE.NETCore.pdb
