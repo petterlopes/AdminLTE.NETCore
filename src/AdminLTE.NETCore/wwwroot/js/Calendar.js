@@ -1,10 +1,8 @@
 ﻿$(function () {
-
     /* initialize the external events
      -----------------------------------------------------------------*/
     function ini_events(ele) {
         ele.each(function () {
-
             // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
             // it doesn't need to have a start or end
             var eventObject = {
@@ -20,7 +18,6 @@
                 revert: true, // will cause the event to go back to its
                 revertDuration: 0  //  original position after the drag
             });
-
         });
     }
 
@@ -95,7 +92,6 @@
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar !!!
         drop: function (date, allDay) { // this function is called when something is dropped
-
             // retrieve the dropped element's stored Event Object
             var originalEventObject = $(this).data('eventObject');
 
@@ -117,7 +113,6 @@
                 // if so, remove the element from the "Draggable Events" list
                 $(this).remove();
             }
-
         }
     });
 

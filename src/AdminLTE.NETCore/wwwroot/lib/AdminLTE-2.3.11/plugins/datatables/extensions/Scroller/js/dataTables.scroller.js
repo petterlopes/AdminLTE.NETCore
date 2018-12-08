@@ -22,8 +22,6 @@
  */
 
 (function(window, document, undefined){
-
-
 var factory = function( $, DataTable ) {
 "use strict";
 
@@ -58,7 +56,7 @@ var factory = function( $, DataTable ) {
  *  @constructor
  *  @global
  *  @param {object} oDT DataTables settings object
- *  @param {object} [oOpts={}] Configuration object for FixedColumns. Options 
+ *  @param {object} [oOpts={}] Configuration object for FixedColumns. Options
  *    are defined by {@link Scroller.defaults}
  *
  *  @requires jQuery 1.7+
@@ -218,8 +216,6 @@ var Scroller = function ( oDTSettings, oOpts ) {
 	this._fnConstruct();
 };
 
-
-
 Scroller.prototype = /** @lends Scroller.prototype */{
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Public methods
@@ -261,7 +257,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			pixels;
 	},
 
-
 	/**
 	 * Calculate the row number that will be found at the given pixel position
 	 * (y-scroll).
@@ -300,7 +295,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			row;
 	},
 
-
 	/**
 	 * Calculate the row number that will be found at the given pixel position (y-scroll)
 	 *  @param {int} iRow Row index to scroll to
@@ -318,7 +312,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *          o.oScroller.fnScrollToRow( 1000 );
 	 *        }
 	 *      } );
-	 *     
+	 *
 	 *      // Sometime later on use the following to scroll to row 500...
 	 *          var oSettings = $('#example').dataTable().fnSettings();
 	 *      oSettings.oScroller.fnScrollToRow( 500 );
@@ -365,7 +359,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		}
 	},
 
-
 	/**
 	 * Calculate and store information about how many rows are to be displayed
 	 * in the scrolling viewport, based on current dimensions in the browser's
@@ -388,7 +381,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *          o.oScroller.fnScrollToRow( 1000 );
 	 *        }
 	 *      } );
-	 *     
+	 *
 	 *      setTimeout( function () {
 	 *        // Make the example container visible and recalculate the scroller sizes
 	 *        document.getElementById('container').style.display = "block";
@@ -413,8 +406,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			this.s.dt.oInstance.fnDraw();
 		}
 	},
-
-
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Private methods (they are of course public in JS, but recommended as private)
@@ -545,7 +536,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		} );
 	},
 
-
 	/**
 	 * Scrolling function - fired whenever the scrolling position is changed.
 	 * This method needs to use the stored values to see if the table should be
@@ -663,14 +653,13 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		this.s.stateSaveThrottle();
 	},
 
-
 	/**
 	 * Convert from one domain to another. The physical domain is the actual
 	 * pixel count on the screen, while the virtual is if we had browsers which
 	 * had scrolling containers of infinite height (i.e. the absolute value)
 	 *
 	 *  @param {string} dir Domain transform direction, `virtualToPhysical` or
-	 *    `physicalToVirtual` 
+	 *    `physicalToVirtual`
 	 *  @returns {number} Calculated transform
 	 *  @private
 	 */
@@ -727,7 +716,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			}
 		}
 	},
-
 
 	/**
 	 * Draw callback function which is fired when the DataTable is redrawn. The main function of
@@ -844,7 +832,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		}
 	},
 
-
 	/**
 	 * Force the scrolling container to have height beyond that of just the
 	 * table that has been drawn so the user can scroll the whole data set.
@@ -870,7 +857,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 
 		this.dom.force.style.height = heights.scroll+"px";
 	},
-
 
 	/**
 	 * Automatic calculation of table row height. This is just a little tricky here as using
@@ -917,7 +903,6 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		this.s.heights.row = $('tr', tbody).eq(1).outerHeight();
 		container.remove();
 	},
-
 
 	/**
 	 * Update any information elements that are controlled by the DataTable based on the scrolling
@@ -1004,12 +989,9 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	}
 };
 
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Statics
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
 
 /**
  * Scroller default settings for initialisation
@@ -1142,8 +1124,6 @@ Scroller.defaults = /** @lends Scroller.defaults */{
 
 Scroller.oDefaults = Scroller.defaults;
 
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Constants
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -1156,8 +1136,6 @@ Scroller.oDefaults = Scroller.defaults;
  *  @static
  */
 Scroller.version = "1.2.2";
-
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Initialisation
@@ -1186,11 +1164,9 @@ else
 	alert( "Warning: Scroller requires DataTables 1.9.0 or greater - www.datatables.net/download");
 }
 
-
 // Attach Scroller to DataTables so it can be accessed as an 'extra'
 $.fn.dataTable.Scroller = Scroller;
 $.fn.DataTable.Scroller = Scroller;
-
 
 // DataTables 1.10 API method aliases
 if ( $.fn.dataTable.Api ) {
@@ -1239,10 +1215,8 @@ if ( $.fn.dataTable.Api ) {
 	} );
 }
 
-
 return Scroller;
 }; // /factory
-
 
 // Define as an AMD module if possible
 if ( typeof define === 'function' && define.amd ) {
@@ -1256,7 +1230,4 @@ else if ( jQuery && !jQuery.fn.dataTable.Scroller ) {
 	// Otherwise simply initialise as normal, stopping multiple evaluation
 	factory( jQuery, jQuery.fn.dataTable );
 }
-
-
 })(window, document);
-

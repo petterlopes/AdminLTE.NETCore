@@ -30,5 +30,4 @@ describe("refresh() Method Tests", function() {
 
     expect(sliderIsRangeValue).toBeFalsy();
   });
-
 }); // End of spec

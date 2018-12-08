@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AdminLTE.NETCore.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
@@ -27,7 +23,6 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayImage("fa fa-circle-o")]
         //[ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/select2/select2.full.min.js,/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.js,/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js,/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js,https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js,/lib/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js,/lib/AdminLTE-2.3.11/plugins/datepicker/bootstrap-datepicker.js,/lib/AdminLTE-2.3.11/plugins/colorpicker/bootstrap-colorpicker.min.js,/lib/AdminLTE-2.3.11/plugins/timepicker/bootstrap-timepicker.min.js,/lib/AdminLTE-2.3.11/plugins/iCheck/icheck.min.js,/js/Forms/Advanced.js")]
         [ScriptAfterPartialView("/js/Forms/advanced.min.js")]
-
         public IActionResult AdvancedElements(bool partial = false)
         {
             if (partial)

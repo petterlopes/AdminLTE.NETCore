@@ -1,6 +1,5 @@
 // AdminLTE Gruntfile
 module.exports = function (grunt) {
-
   'use strict';
 
   grunt.initConfig({

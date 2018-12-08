@@ -1,8 +1,5 @@
 ﻿using AdminLTE.NETCore.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace AdminLTE.NETCore.ViewComponents
@@ -10,6 +7,7 @@ namespace AdminLTE.NETCore.ViewComponents
     public class ControllerListViewComponent : ViewComponent
     {
         private readonly IControllerInformationRepository _controllerList;
+
         public ControllerListViewComponent(IControllerInformationRepository controllerList)
         {
             _controllerList = controllerList;

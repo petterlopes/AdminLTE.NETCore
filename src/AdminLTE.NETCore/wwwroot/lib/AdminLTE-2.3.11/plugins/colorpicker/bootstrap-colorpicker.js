@@ -542,7 +542,6 @@
       }
     };
 
-
     var defaults = {
       horizontal: false, // horizontal mode layout ?
       inline: false, //forces to show the colorpicker as an inline element
@@ -691,7 +690,6 @@
 
       // for HTML5 input[type='color']
       if ((this.input !== false) && (this.component !== false) && (this.input.attr('type') === 'color')) {
-
         this.input.on({
           'click.colorpicker': $.proxy(this.show, this),
           'focus.colorpicker': $.proxy(this.show, this)
@@ -844,7 +842,6 @@
           this.updatePicker(); // only update picker if value is not empty
         }
         return val;
-
       },
       setValue: function(val) { // set color manually
         this.color = new Color(val, this.options.colorSelectors);
@@ -982,7 +979,6 @@
         // Only occurs if user choose the dynamic format by
         // setting option format to false
         if (this.currentSlider.callTop === 'setAlpha' && this.options.format === false) {
-
           // Converting from hex / rgb to rgba
           if (this.color.value.a !== 1) {
             this.format = 'rgba';
@@ -1075,5 +1071,4 @@
     };
 
     $.fn.colorpicker.constructor = Colorpicker;
-
   }));

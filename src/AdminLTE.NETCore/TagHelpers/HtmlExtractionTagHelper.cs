@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using HtmlAgilityPack;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using HtmlAgilityPack;
-using Microsoft.Extensions.Caching.Memory;
-using System.Text.Encodings.Web;
+using System;
+using System.Linq;
 
 /*
 This TH was written by Francisco Rodriguez
@@ -29,7 +23,7 @@ namespace AdminLTE.NETCore.TagHelpers
         //{
         //    //Need to look at making this configurable.
         //    ExpiresSliding = TimeSpan.FromMinutes(5);
-            
+
         //}
 
         /// <summary>
@@ -51,8 +45,8 @@ namespace AdminLTE.NETCore.TagHelpers
         public string HtmlAttributeValue { get; set; } = "content-wrapper";
 
         /// <summary>
-        /// String replacement format {,} where the first element is the value to look for 
-        /// and the second is the value to replace with        
+        /// String replacement format {,} where the first element is the value to look for
+        /// and the second is the value to replace with
         /// </summary>
         [HtmlAttributeName("html-replacement")]
         public string HtmlReplacement { get; set; }
@@ -79,7 +73,7 @@ namespace AdminLTE.NETCore.TagHelpers
 
                     //Make this configurable.
                     var content = p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/");
-                  
+
                     if (!String.IsNullOrEmpty(HtmlReplacement))
                     {
                         try
@@ -99,7 +93,6 @@ namespace AdminLTE.NETCore.TagHelpers
                     }
 
                     output.Content.SetHtmlContent(content);
-
                 }
                 catch  //Possibly not found or other error
                 { }

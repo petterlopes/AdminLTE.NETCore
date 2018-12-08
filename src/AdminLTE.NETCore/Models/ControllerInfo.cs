@@ -1,8 +1,5 @@
 ﻿using AdminLTE.NETCore.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AdminLTE.NETCore.Models
 {
@@ -16,5 +13,4 @@ namespace AdminLTE.NETCore.Models
         public TreeViewAttribute TreeViewSettings { get; set; }
         public TreeViewSettingsAttribute TreeViewSettings2 { get; set; }
     }
-
 }

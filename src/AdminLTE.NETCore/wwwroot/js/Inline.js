@@ -1,5 +1,4 @@
-﻿
-$(function () {
+﻿$(function () {
     /* jQueryKnob */
 
     $(".knob").knob({
@@ -13,10 +12,8 @@ $(function () {
          console.log("cancel : " + this.value);
          },*/
         draw: function () {
-
             // "tron" case
             if (this.$.data('skin') == 'tron') {
-
                 var a = this.angle(this.cv)  // Angle
                     , sa = this.startAngle          // Previous start angle
                     , sat = this.startAngle         // Start angle
@@ -67,15 +64,12 @@ $(function () {
     /* SPARKLINE DOCUMENTATION EXAMPLES http://omnipotent.net/jquery.sparkline/#s-about */
     drawDocSparklines();
     drawMouseSpeedDemo();
-
 });
 function drawDocSparklines() {
-
     // Bar + line composite charts
     $('#compositebar').sparkline('html', { type: 'bar', barColor: '#aaf' });
     $('#compositebar').sparkline([4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7],
         { composite: true, fillColor: false, lineColor: 'red' });
-
 
     // Line charts taking their values from the tag
     $('.sparkline-1').sparkline();

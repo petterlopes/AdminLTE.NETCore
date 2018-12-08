@@ -37,14 +37,12 @@
  *
  * ========================================================= */
 
-
 /**
  * Bridget makes jQuery widgets
  * v1.0.1
  * MIT license
  */
 const windowIsDefined = (typeof window === "object");
-
 
 (function(factory) {
 	if(typeof define === "function" && define.amd) {
@@ -82,9 +80,7 @@ const windowIsDefined = (typeof window === "object");
 	// Reference to Slider constructor
 	var Slider;
 
-
 	(function( $ ) {
-
 		'use strict';
 
 		// -------------------------- utils -------------------------- //
@@ -96,7 +92,6 @@ const windowIsDefined = (typeof window === "object");
 		// -------------------------- definition -------------------------- //
 
 		function defineBridget( $ ) {
-
 			// bail if no jQuery
 			if ( !$ ) {
 				return;
@@ -123,7 +118,6 @@ const windowIsDefined = (typeof window === "object");
 			    this.options = $.extend( true, this.options, opts );
 			  };
 			}
-
 
 			// -------------------------- plugin bridge -------------------------- //
 
@@ -192,7 +186,6 @@ const windowIsDefined = (typeof window === "object");
 			      }
 			    }
 			  };
-
 			}
 
 			// -------------------------- bridget -------------------------- //
@@ -209,14 +202,11 @@ const windowIsDefined = (typeof window === "object");
 			};
 
 			return $.bridget;
-
 		}
 
 	  	// get jquery from browser global
 	  	defineBridget( $ );
-
 	})( $ );
-
 
 	/*************************************************
 
@@ -225,7 +215,6 @@ const windowIsDefined = (typeof window === "object");
 	**************************************************/
 
 	(function($) {
-
 		var ErrorMsgs = {
 			formatInvalidInputErrorMsg : function(input) {
 				return "Invalid input value '" + input + "' passed in";
@@ -322,7 +311,6 @@ const windowIsDefined = (typeof window === "object");
 			}
 		};
 
-
 		/*************************************************
 
 							CONSTRUCTOR
@@ -334,7 +322,6 @@ const windowIsDefined = (typeof window === "object");
 		};
 
 		function createNewSlider(element, options) {
-
 			/*
 				The internal state object is used to store data about the current 'state' of slider.
 				This includes values such as the `value`, `enabled`, etc...
@@ -403,9 +390,7 @@ const windowIsDefined = (typeof window === "object");
 				}
 			}
 			else if(this.options.orientation === "horizontal" && (this.options.tooltip_position === "left" || this.options.tooltip_position === "right")) {
-
 				this.options.tooltip_position	= "top";
-
 			}
 
 			function getDataAttrib(element, optName) {
@@ -474,7 +459,6 @@ const windowIsDefined = (typeof window === "object");
 				this.rangeHighlightElements = [];
 				if (Array.isArray(this.options.rangeHighlights) && this.options.rangeHighlights.length > 0) {
 					for (let j = 0; j < this.options.rangeHighlights.length; j++) {
-
 						var rangeHighlightElement = document.createElement("div");
 						rangeHighlightElement.className = "slider-rangeHighlight slider-selection";
 
@@ -782,7 +766,6 @@ const windowIsDefined = (typeof window === "object");
 			this.resize = this._resize.bind(this);
 			window.addEventListener("resize", this.resize, false);
 
-
 			// Bind tooltip-related handlers
 			if(this.options.tooltip === 'hide') {
 				this._addClass(this.tooltip, 'hide');
@@ -830,7 +813,6 @@ const windowIsDefined = (typeof window === "object");
 			} else {
 				this.disable();
 			}
-
 		}
 
 		/*************************************************
@@ -1243,7 +1225,6 @@ const windowIsDefined = (typeof window === "object");
 
 				/* Position ticks and labels */
 				if (Array.isArray(this.options.ticks) && this.options.ticks.length > 0) {
-
 					var styleSize = this.options.orientation === 'vertical' ? 'height' : 'width';
 					var styleMargin;
 					if( this.options.orientation === 'vertical' ){
@@ -1278,7 +1259,6 @@ const windowIsDefined = (typeof window === "object");
 						}
 					}
 					for (var i = 0; i < this.options.ticks.length; i++) {
-
 						var percentage = this.options.ticks_positions[i] || this._toPercentage(this.options.ticks[i]);
 
 						if (this.options.reversed) {
@@ -1920,7 +1900,6 @@ const windowIsDefined = (typeof window === "object");
 				$("input[data-provide=slider]")[autoRegisterNamespace]();
 			});
 		}
-
 	})( $ );
 
 	return Slider;

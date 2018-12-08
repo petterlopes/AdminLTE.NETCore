@@ -1,5 +1,5 @@
 /*! =======================================================
-                      VERSION  9.7.0              
+                      VERSION  9.7.0
 ========================================================= */
 "use strict";
 
@@ -85,7 +85,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 	var Slider;
 
 	(function ($) {
-
 		'use strict';
 
 		// -------------------------- utils -------------------------- //
@@ -97,7 +96,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 		// -------------------------- definition -------------------------- //
 
 		function defineBridget($) {
-
 			// bail if no jQuery
 			if (!$) {
 				return;
@@ -217,7 +215,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
  	**************************************************/
 
 	(function ($) {
-
 		var ErrorMsgs = {
 			formatInvalidInputErrorMsg: function formatInvalidInputErrorMsg(input) {
 				return "Invalid input value '" + input + "' passed in";
@@ -329,7 +326,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 		};
 
 		function createNewSlider(element, options) {
-
 			/*
    	The internal state object is used to store data about the current 'state' of slider.
    	This includes values such as the `value`, `enabled`, etc...
@@ -395,7 +391,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 					this.options.tooltip_position = "right";
 				}
 			} else if (this.options.orientation === "horizontal" && (this.options.tooltip_position === "left" || this.options.tooltip_position === "right")) {
-
 				this.options.tooltip_position = "top";
 			}
 
@@ -462,7 +457,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				this.rangeHighlightElements = [];
 				if (Array.isArray(this.options.rangeHighlights) && this.options.rangeHighlights.length > 0) {
 					for (var j = 0; j < this.options.rangeHighlights.length; j++) {
-
 						var rangeHighlightElement = document.createElement("div");
 						rangeHighlightElement.className = "slider-rangeHighlight slider-selection";
 
@@ -1205,7 +1199,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 
 				/* Position ticks and labels */
 				if (Array.isArray(this.options.ticks) && this.options.ticks.length > 0) {
-
 					var styleSize = this.options.orientation === 'vertical' ? 'height' : 'width';
 					var styleMargin;
 					if (this.options.orientation === 'vertical') {
@@ -1240,7 +1233,6 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 						}
 					}
 					for (var i = 0; i < this.options.ticks.length; i++) {
-
 						var percentage = this.options.ticks_positions[i] || this._toPercentage(this.options.ticks[i]);
 
 						if (this.options.reversed) {

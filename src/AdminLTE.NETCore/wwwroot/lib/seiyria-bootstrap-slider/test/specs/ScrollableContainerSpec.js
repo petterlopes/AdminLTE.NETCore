@@ -1,11 +1,11 @@
-describe("Scrollable test", function() {
+describe("Scrollable test", function () {
     var testSlider;
     var sliderHandleTopPos;
     var sliderHandleLeftPos;
     var scrollableContainer;
 
-    describe("Vertical inside scrollable container", function() {
-        beforeEach(function() {
+    describe("Vertical inside scrollable container", function () {
+        beforeEach(function () {
             testSlider = new Slider("#ex1", {
                 id: "ex1Slider",
                 orientation: "vertical",
@@ -22,11 +22,10 @@ describe("Scrollable test", function() {
             var sliderHandleBoundingBoxInfo = sliderHandleEl.getBoundingClientRect();
             sliderHandleTopPos = sliderHandleBoundingBoxInfo.top;
             sliderHandleLeftPos = sliderHandleBoundingBoxInfo.left;
-
         });
 
-        afterEach(function() {
-            if(testSlider) {
+        afterEach(function () {
+            if (testSlider) {
                 testSlider.destroy();
             }
         });
@@ -35,7 +34,7 @@ describe("Scrollable test", function() {
         // but difference between initial and final slider value is not equal (6 and 4).
         // It happens because we don't 'hit' the center of handle but the top left corner.
 
-        it("slides up when handle moves upwards inside scrollable element after scrolling", function() {
+        it("slides up when handle moves upwards inside scrollable element after scrolling", function () {
             var mousemove = document.createEvent('MouseEvents');
             var mousemoveX = sliderHandleLeftPos;
             var mousemoveY = sliderHandleTopPos - 50;
@@ -58,7 +57,7 @@ describe("Scrollable test", function() {
             expect(newSliderValue).toEqual(4);
         });
 
-        it("slides down when handle moves downwards inside scrollable element after scrolling", function() {
+        it("slides down when handle moves downwards inside scrollable element after scrolling", function () {
             var mousemove = document.createEvent('MouseEvents');
             var mousemoveX = sliderHandleLeftPos;
             var mousemoveY = sliderHandleTopPos + 50;
@@ -81,5 +80,4 @@ describe("Scrollable test", function() {
             expect(newSliderValue).toEqual(14);
         });
     });
-
 }); // End of spec

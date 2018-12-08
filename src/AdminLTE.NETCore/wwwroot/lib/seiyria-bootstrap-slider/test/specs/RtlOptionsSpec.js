@@ -75,7 +75,5 @@ describe("RTL Tests", function() {
       expect(mainTooltipHasClassRight).toBeTruthy();
       expect(testSlider.tooltip.style.left).toBe("100%");
     });
-
   });
-
 }); // End of spec

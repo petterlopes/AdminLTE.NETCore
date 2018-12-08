@@ -4,23 +4,19 @@
 //--------------------------------------------------
 //--------------------------------------------------
 
-
-
-describe("'off()' test", function() {
+describe("'off()' test", function () {
     var testSlider, eventHandlerTriggered, mouse;
 
-    var onStart = function(){
+    var onStart = function () {
         eventHandlerTriggered = true;
     };
 
-
-    beforeEach(function() {
+    beforeEach(function () {
         eventHandlerTriggered = false;
         mouse = document.createEvent('MouseEvents');
     });
 
-
-    it("should properly unbind an event listener", function() {
+    it("should properly unbind an event listener", function () {
         testSlider = $("#testSlider1").slider();
 
         testSlider.on('slideStart', onStart);

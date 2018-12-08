@@ -8,13 +8,11 @@
     var data = [], totalPoints = 100;
 
     function getRandomData() {
-
         if (data.length > 0)
             data = data.slice(1);
 
         // Do a random walk
         while (data.length < totalPoints) {
-
             var prev = data.length > 0 ? data[data.length - 1] : 50,
                 y = prev + Math.random() * 10 - 5;
 
@@ -63,7 +61,6 @@
     var updateInterval = 500; //Fetch data ever x milliseconds
     var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
     function update() {
-
         interactive_plot.setData([getRandomData()]);
 
         // Since the axes don't change, we don't need to call plot.setupGrid()
@@ -89,7 +86,6 @@
     /*
      * END INTERACTIVE CHART
      */
-
 
     /*
      * LINE CHART
@@ -144,7 +140,6 @@
         opacity: 0.8
     }).appendTo("body");
     $("#line-chart").bind("plothover", function (event, pos, item) {
-
         if (item) {
             var x = item.datapoint[0].toFixed(2),
                 y = item.datapoint[1].toFixed(2);
@@ -155,7 +150,6 @@
         } else {
             $("#line-chart-tooltip").hide();
         }
-
     });
     /* END LINE CHART */
 
@@ -238,7 +232,6 @@
                     formatter: labelFormatter,
                     threshold: 0.1
                 }
-
             }
         },
         legend: {
@@ -248,7 +241,6 @@
     /*
      * END DONUT CHART
      */
-
 });
 
 /*

@@ -92,7 +92,6 @@ describe("RangeHighlights Render Tests", function() {
 
     //test the visibility of ranges e.g. : { "start": 23, "end": 15 } - out of range - not visible
     function testHighlightedElements(sliderId, isHorizontal, expections) {
-
         //check elements exist
         it("Highlighted ranges are rendered - " + sliderId, function() {
             expect($(sliderId).length).toBe(1);

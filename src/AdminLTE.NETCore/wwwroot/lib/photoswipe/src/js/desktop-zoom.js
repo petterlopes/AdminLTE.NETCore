@@ -6,17 +6,14 @@
  * - Manages "dragging", "zoomed-in", "zoom-out" classes.
  *   (which are used for cursors and zoom icon)
  * - Adds toggleDesktopZoom function.
- * 
+ *
  */
 
 var _wheelDelta;
-	
+
 _registerModule('DesktopZoom', {
-
 	publicMethods: {
-
 		initDesktopZoom: function() {
-
 			if(_oldIE) {
 				// no zoom for old IE (<=8)
 				return;
@@ -31,15 +28,13 @@ _registerModule('DesktopZoom', {
 			} else {
 				self.setupDesktopZoom(true);
 			}
-
 		},
 
 		setupDesktopZoom: function(onInit) {
-
 			_wheelDelta = {};
 
 			var events = 'wheel mousewheel DOMMouseScroll';
-			
+
 			_listen('bindEvents', function() {
 				framework.bind(template, events,  self.handleMouseWheel);
 			});
@@ -85,14 +80,11 @@ _registerModule('DesktopZoom', {
 			if(!onInit) {
 				updateZoomable();
 			}
-			
 		},
 
 		handleMouseWheel: function(e) {
-
 			if(_currZoomLevel <= self.currItem.fitRatio) {
 				if( _options.modal ) {
-
 					if (!_options.closeOnScroll || _numAnimations || _isDragging) {
 						e.preventDefault();
 					} else if(_transformKey && Math.abs(e.deltaY) > 2) {
@@ -101,7 +93,6 @@ _registerModule('DesktopZoom', {
 						_closedByScroll = true;
 						self.close();
 					}
-
 				}
 				return true;
 			}
@@ -159,12 +150,11 @@ _registerModule('DesktopZoom', {
 
 			var doubleTapZoomLevel = _options.getDoubleTapZoom(true, self.currItem);
 			var zoomOut = _currZoomLevel === doubleTapZoomLevel;
-			
+
 			self.mouseZoomedIn = !zoomOut;
 
 			self.zoomTo(zoomOut ? self.currItem.initialZoomLevel : doubleTapZoomLevel, centerPoint, 333);
 			framework[ (!zoomOut ? 'add' : 'remove') + 'Class'](template, 'pswp--zoomed-in');
 		}
-
 	}
 });

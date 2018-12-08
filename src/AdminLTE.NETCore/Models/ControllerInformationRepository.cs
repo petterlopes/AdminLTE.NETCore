@@ -1,11 +1,9 @@
 ﻿using AdminLTE.NETCore.Attributes;
 using AdminLTE.NETCore.Common;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace AdminLTE.NETCore.Models
 {
@@ -67,7 +65,6 @@ namespace AdminLTE.NETCore.Models
                         }).ToList()
                     }
             ).ToList();
-
         }
 
         private string CleanupControllerName(string controllerName)

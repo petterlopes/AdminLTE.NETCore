@@ -21,25 +21,22 @@ namespace AdminLTE.NETCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             //Add Memory Cache
             //https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
             services.AddMemoryCache();
 
             services.Configure<GzipCompressionProviderOptions>
                 (options => options.Level = CompressionLevel.Fastest);
-                services.AddResponseCompression(options =>
-                {
-                    options.Providers.Add<GzipCompressionProvider>();
-                });
-
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<GzipCompressionProvider>();
+            });
 
             // Add framework services.
             services.AddMvc();
 
             //Add the ControllerInformationRepository
             services.AddSingleton<IControllerInformationRepository, ControllerInformationRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

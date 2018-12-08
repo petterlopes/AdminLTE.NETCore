@@ -1,6 +1,5 @@
 /*global module:false*/
 module.exports = function(grunt) {
-
   var packageJSON = grunt.file.readJSON('package.json');
   var bumpFiles = ["package.json", "bower.json", "composer.json"];
   var commitFiles = bumpFiles.concat(["./dist/*"]);
@@ -312,5 +311,4 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', 'development');
   grunt.registerTask('prod', 'production');
   grunt.registerTask('default', ['build']);
-
 }; // End of module

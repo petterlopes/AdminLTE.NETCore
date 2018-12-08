@@ -6,23 +6,21 @@
  * If you're not planning to use transition for gallery at all,
  * you may set options hideAnimationDuration and showAnimationDuration to 0,
  * and just delete startAnimation function.
- * 
+ *
  */
-
 
 var _showOrHideTimeout,
 	_showOrHide = function(item, img, out, completeFn) {
-
 		if(_showOrHideTimeout) {
 			clearTimeout(_showOrHideTimeout);
 		}
 
 		_initialZoomRunning = true;
 		_initialContentSet = true;
-		
+
 		// dimensions of small thumbnail {x:,y:,w:}.
 		// Height is optional, as calculated based on large image.
-		var thumbBounds; 
+		var thumbBounds;
 		if(item.initialLayout) {
 			thumbBounds = item.initialLayout;
 			item.initialLayout = null;
@@ -54,7 +52,6 @@ var _showOrHideTimeout,
 
 		// if bounds aren't provided, just open gallery without animation
 		if(!duration || !thumbBounds || thumbBounds.x === undefined) {
-
 			_shout('initialZoom' + (out ? 'Out' : 'In') );
 
 			_currZoomLevel = item.initialZoomLevel;
@@ -78,7 +75,7 @@ var _showOrHideTimeout,
 		var startAnimation = function() {
 			var closeWithRaf = _closedByScroll,
 				fadeEverything = !self.currItem.src || self.currItem.loadError || _options.showHideOpacity;
-			
+
 			// apply hw-acceleration to image
 			if(item.miniImg) {
 				item.miniImg.style.webkitBackfaceVisibility = 'hidden';
@@ -94,7 +91,7 @@ var _showOrHideTimeout,
 			}
 
 			_registerStartAnimation('initialZoom');
-			
+
 			if(out && !closeWithRaf) {
 				framework.removeClass(template, 'pswp--animated-in');
 			}
@@ -110,17 +107,14 @@ var _showOrHideTimeout,
 			}
 
 			_showOrHideTimeout = setTimeout(function() {
-
 				_shout('initialZoom' + (out ? 'Out' : 'In') );
-				
 
 				if(!out) {
-
 					// "in" animation always uses CSS transitions (instead of rAF).
-					// CSS transition work faster here, 
-					// as developer may also want to animate other things, 
+					// CSS transition work faster here,
+					// as developer may also want to animate other things,
 					// like ui on top of sliding area, which can be animated just via CSS
-					
+
 					_currZoomLevel = item.initialZoomLevel;
 					_equalizePoints(_panOffset,  item.initialPosition );
 					_applyCurrentZoomPan();
@@ -134,7 +128,6 @@ var _showOrHideTimeout,
 
 					_showOrHideTimeout = setTimeout(onComplete, duration + 20);
 				} else {
-
 					// "out" animation uses rAF only when PhotoSwipe is closed by browser scroll, to recalculate position
 					var destZoomLevel = thumbBounds.w / item.w,
 						initialPanOffset = {
@@ -144,7 +137,6 @@ var _showOrHideTimeout,
 						initialZoomLevel = _currZoomLevel,
 						initalBgOpacity = _bgOpacity,
 						onUpdate = function(now) {
-							
 							if(now === 1) {
 								_currZoomLevel = destZoomLevel;
 								_panOffset.x = thumbBounds.x;
@@ -154,7 +146,7 @@ var _showOrHideTimeout,
 								_panOffset.x = (thumbBounds.x - initialPanOffset.x) * now + initialPanOffset.x;
 								_panOffset.y = (thumbBounds.y - _currentWindowScrollY - initialPanOffset.y) * now + initialPanOffset.y;
 							}
-							
+
 							_applyCurrentZoomPan();
 							if(fadeEverything) {
 								template.style.opacity = 1 - now;
@@ -170,12 +162,9 @@ var _showOrHideTimeout,
 						_showOrHideTimeout = setTimeout(onComplete, duration + 20);
 					}
 				}
-			
 			}, out ? 25 : 90); // Main purpose of this delay is to give browser time to paint and
 					// create composite layers of PhotoSwipe UI parts (background, controls, caption, arrows).
 					// Which avoids lag at the beginning of scale transition.
 		};
 		startAnimation();
-
-		
 	};

@@ -1,6 +1,4 @@
-﻿
-
-//TODO: Refactor to simplify
+﻿//TODO: Refactor to simplify
 $("li[id^='left-sidebar-menu']").on("click", function () {
     var $this = $(this);
     var checkElement = $this.next();
@@ -14,7 +12,6 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
         var url = $this.attr("controllerInfo");
         $.post(url).done(function (response) {
             $(".content-wrapper").html(response).after(function () {
-
                 var scripturl = $this.attr("scriptToRun");
 
                 //Check if a script is defined for the controller
@@ -55,7 +52,6 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
 
                 var treeElement = $(".treeview.active"); //Parent treeview
                 if (treeElement) {
-
                     treeElement.removeClass('active');
 
                     var firstchild = treeElement.children('ul')
@@ -67,7 +63,7 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
                             //Fix the layout in case the sidebar stretches over the height of the window
                             //_this.layout.fix();
                         });
-                    }                    
+                    }
                 }
             }
 
@@ -77,7 +73,6 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
         //}
     };
 });
-
 
 //http://stackoverflow.com/questions/11803215/how-to-include-multiple-js-files-using-jquery-getscript-method
 $.getMultiScripts = function (arr, path) {
