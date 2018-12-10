@@ -1,1 +1,0 @@
-D:\GIT\AdminLTE.NETCore\src\AdminLTE.NETCore\bin\Debug\netcoreapp2.1\AdminLTE.NETCore.dll

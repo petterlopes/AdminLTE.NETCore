@@ -13,6 +13,7 @@ namespace AdminLTE.NETCore
     {
         public Startup(IConfiguration configuration)
         {
+
             Configuration = configuration;
         }
 
@@ -24,6 +25,12 @@ namespace AdminLTE.NETCore
             //Add Memory Cache
             //https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
             services.AddMemoryCache();
+
+
+            services.Configure<IISOptions>(o =>
+            {
+                o.ForwardClientCertificate = false;
+            });
 
             services.Configure<GzipCompressionProviderOptions>
                 (options => options.Level = CompressionLevel.Fastest);
@@ -54,6 +61,7 @@ namespace AdminLTE.NETCore
             {
                 app.UseExceptionHandler("/Home/Error"); //Need to provide a replacement.
             }
+
 
             app.UseStaticFiles();
 
